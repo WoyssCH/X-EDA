@@ -1,0 +1,6 @@
+Name,Address,PostalCode,City,Canton,Phone,Email,Website,Specialty,Source
+Praxis Dr. Meier,Bahnhofstrasse 1,8001,Zürich,ZH,044 123 45 67,info@meier.ch,www.meier.ch,Allgemeinmedizin,WebScraping
+Klinik am See,Seeweg 12,6005,Luzern,LU,041 987 65 43,kontakt@klinik-see.ch,,Kardiologie,ManualEntry
+Dr. med. Weber,Rue du Rhone 50,1204,Genève,GE,,info@weber-med.ch,www.weber-med.ch,Dermatologie,WebScraping
+Gesundheitszentrum Bern,Marktgasse 3,3011,Bern,BE,031 111 22 33,bern@gz.ch,www.gz-bern.ch,Allgemeinmedizin,Referral
+Praxis Alpenglück,Dorfplatz 4,3818,Grindelwald,BE,,,info@alpenglueck.ch,www.alpenglueck.ch,Orthopädie,ManualEntry
