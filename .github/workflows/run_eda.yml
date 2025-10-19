@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'data.csv' # Only run when the data.csv file is changed
 
 jobs:
   build-and-run:
