@@ -1,9 +1,12 @@
-name: Run and Commit Jupyter Notebook
+name: Run and Commit EDA Notebooks
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'data.csv'
+      - 'umfrage.xlsx'
 
 jobs:
   build-and-run:
@@ -26,15 +29,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Execute Jupyter Notebook
+      - name: Execute Praxis EDA Notebook
         run: |
-          jupyter nbconvert --to notebook --execute eda.ipynb --inplace
+          jupyter nbconvert --to notebook --execute eda_praxis.ipynb --inplace
+        continue-on-error: true
+
+      - name: Execute Survey EDA Notebook
+        run: |
+          jupyter nbconvert --to notebook --execute eda_umfrage.ipynb --inplace
+        continue-on-error: true
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add eda.ipynb
+          git add *.ipynb
           # Commit only if there are changes
-          git diff --staged --quiet || git commit -m "Automated EDA: Update Jupyter Notebook with new results"
+          git diff --staged --quiet || git commit -m "Automated EDA: Update notebooks with new results"
           git push
