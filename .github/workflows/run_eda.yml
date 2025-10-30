@@ -9,6 +9,7 @@ on:
       - 'umfrage.xlsx'
       - 'eda_praxis.ipynb'
       - 'eda_umfrage.ipynb'
+      - 'requirements.txt'
 
 jobs:
   build-and-run:
