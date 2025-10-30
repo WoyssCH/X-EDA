@@ -28,15 +28,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          # Install additional packages for visualization
+          pip install kaleido  # For plotly static image export
 
       - name: Execute Praxis EDA Notebook
         run: |
-          jupyter nbconvert --to notebook --execute eda_praxis.ipynb --inplace
+          export MPLBACKEND=Agg
+          jupyter nbconvert --to notebook --execute eda_praxis.ipynb --inplace --ExecutePreprocessor.timeout=300
         continue-on-error: true
 
       - name: Execute Survey EDA Notebook
         run: |
-          jupyter nbconvert --to notebook --execute eda_umfrage.ipynb --inplace
+          export MPLBACKEND=Agg
+          jupyter nbconvert --to notebook --execute eda_umfrage.ipynb --inplace --ExecutePreprocessor.timeout=300
         continue-on-error: true
 
       - name: Commit and push changes
