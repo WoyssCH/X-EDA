@@ -7,6 +7,7 @@ on:
     paths:
       - 'data.csv'
       - 'umfrage.xlsx'
+      - '*.ipynb'
 
 jobs:
   build-and-run:
