@@ -7,7 +7,8 @@ on:
     paths:
       - 'data.csv'
       - 'umfrage.xlsx'
-      - '*.ipynb'
+      - 'eda_praxis.ipynb'
+      - 'eda_umfrage.ipynb'
 
 jobs:
   build-and-run:
