@@ -36,13 +36,11 @@ jobs:
 
       - name: Execute Praxis EDA Notebook
         run: |
-          export MPLBACKEND=Agg
           jupyter nbconvert --to notebook --execute eda_praxis.ipynb --inplace --ExecutePreprocessor.timeout=300
         continue-on-error: true
 
       - name: Execute Survey EDA Notebook
         run: |
-          export MPLBACKEND=Agg
           jupyter nbconvert --to notebook --execute eda_umfrage.ipynb --inplace --ExecutePreprocessor.timeout=300
         continue-on-error: true
 
